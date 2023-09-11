@@ -22,16 +22,16 @@
 
 #include <string.h>
 
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h"                  // ::CMSIS:RTOS2
-#include "NucleoH7_freeRTOS/Drivers/CMSIS/Include/cmsis_compiler.h"             // Compiler agnostic definitions
+#include "cmsis_os2.h"                  // ::CMSIS:RTOS2
+#include "cmsis_compiler.h"             // Compiler agnostic definitions
 
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h"                       // ARM.FreeRTOS::RTOS:Core
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h"               // ARM.FreeRTOS::RTOS:Event Groups
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"                     // ARM.FreeRTOS::RTOS:Core
+#include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
+#include "task.h"                       // ARM.FreeRTOS::RTOS:Core
+#include "event_groups.h"               // ARM.FreeRTOS::RTOS:Event Groups
+#include "semphr.h"                     // ARM.FreeRTOS::RTOS:Core
 
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_mpool.h"             // osMemoryPool definitions
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/freertos_os2.h"               // Configuration check and setup
+#include "freertos_mpool.h"             // osMemoryPool definitions
+#include "freertos_os2.h"               // Configuration check and setup
 
 /*---------------------------------------------------------------------------*/
 #ifndef __ARM_ARCH_6M__

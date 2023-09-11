@@ -27,8 +27,8 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h"
-#include "NucleoH7_freeRTOS/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h"
+#include "stm32h7xx.h"
+#include "stm32_hal_legacy.h"
 #include <stddef.h>
 #include <math.h>
 

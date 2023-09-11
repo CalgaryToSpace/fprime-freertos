@@ -18,7 +18,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/eth.h"
+#include "eth.h"
 
 #if defined ( __ICCARM__ ) /*!< IAR Compiler */
 

@@ -18,7 +18,8 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/gpio.h"
+// #include "gpio.h"
+#include "gpio.h"
 
 /* USER CODE BEGIN 0 */
 

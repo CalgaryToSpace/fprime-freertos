@@ -19,10 +19,10 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-#include "NucleoH7_freeRTOS/Core/Inc/main.h"
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
+#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

@@ -25,7 +25,7 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/main.h"
+#include "main.h"
 #include "string.h"
 
 /* USER CODE BEGIN Includes */

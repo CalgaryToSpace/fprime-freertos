@@ -26,7 +26,7 @@
 #include <string.h>
 #include <stdint.h>
 
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
+#include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
 
 #include CMSIS_device_header
 

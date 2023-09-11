@@ -28,7 +28,7 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
+#include "stm32h7xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

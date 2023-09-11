@@ -18,7 +18,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/usb_otg.h"
+#include "usb_otg.h"
 
 /* USER CODE BEGIN 0 */
 

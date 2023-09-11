@@ -144,7 +144,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
+#include "stm32h7xx_hal.h"
 
 /** @addtogroup STM32H7xx_HAL_Driver
   * @{

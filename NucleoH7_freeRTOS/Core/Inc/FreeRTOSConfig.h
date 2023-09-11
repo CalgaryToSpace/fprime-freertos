@@ -53,7 +53,7 @@
   extern uint32_t SystemCoreClock;
 #endif
 #ifndef CMSIS_device_header
-#define CMSIS_device_header "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h"
+#define CMSIS_device_header "stm32h7xx.h"
 #endif /* CMSIS_device_header */
 
 #define configENABLE_FPU                         0

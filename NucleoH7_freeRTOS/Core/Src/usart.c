@@ -18,7 +18,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/usart.h"
+#include "usart.h"
 
 /* USER CODE BEGIN 0 */
 

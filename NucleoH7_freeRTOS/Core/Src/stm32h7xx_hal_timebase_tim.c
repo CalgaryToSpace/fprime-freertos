@@ -19,8 +19,8 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
-#include "NucleoH7_freeRTOS/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h"
+#include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_tim.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/

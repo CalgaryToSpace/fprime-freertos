@@ -53,13 +53,13 @@ extern "C" {
 #endif
 
 /* Application specific configuration options. */
-#include "NucleoH7_freeRTOS/Core/Inc/FreeRTOSConfig.h"
+#include "FreeRTOSConfig.h"
 
 /* Basic FreeRTOS definitions. */
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"
+#include "projdefs.h"
 
 /* Definitions specific to the port being used. */
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
+#include "portable.h"
 
 /* Must be defaulted before configUSE_NEWLIB_REENTRANT is used below. */
 #ifndef configUSE_NEWLIB_REENTRANT

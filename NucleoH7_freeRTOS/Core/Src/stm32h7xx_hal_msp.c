@@ -20,7 +20,7 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/main.h"
+#include "main.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */

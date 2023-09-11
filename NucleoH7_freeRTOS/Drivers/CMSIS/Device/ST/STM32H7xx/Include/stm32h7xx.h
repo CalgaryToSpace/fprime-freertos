@@ -8,8 +8,8 @@
   *          is using in the C source code, usually in main.c. This file contains:
   *           - Configuration section that allows to select:
   *              - The STM32H7xx device used in the target application
-  *              - To use or not the peripheral’s drivers in application code(i.e.
-  *                code will be based on direct access to peripheral’s registers
+  *              - To use or not the peripheralï¿½s drivers in application code(i.e.
+  *                code will be based on direct access to peripheralï¿½s registers
   *                rather than drivers API), this option is controlled by
   *                "#define USE_HAL_DRIVER"
   *
@@ -121,45 +121,45 @@
   */
 
 #if defined(STM32H743xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h"
+  #include "stm32h743xx.h"
 #elif defined(STM32H753xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h753xx.h"
+  #include "stm32h753xx.h"
 #elif defined(STM32H750xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h"
+  #include "stm32h750xx.h"
 #elif defined(STM32H742xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h742xx.h"
+  #include "stm32h742xx.h"
 #elif defined(STM32H745xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h745xx.h"
+  #include "stm32h745xx.h"
 #elif defined(STM32H755xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h755xx.h"
+  #include "stm32h755xx.h"
 #elif defined(STM32H747xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h747xx.h"
+  #include "stm32h747xx.h"
 #elif defined(STM32H757xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h757xx.h"
+  #include "stm32h757xx.h"
 #elif defined(STM32H7B0xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7b0xx.h"
+  #include "stm32h7b0xx.h"
 #elif defined(STM32H7B0xxQ)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7b0xxq.h"
+  #include "stm32h7b0xxq.h"
 #elif defined(STM32H7A3xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7a3xx.h"
+  #include "stm32h7a3xx.h"
 #elif defined(STM32H7B3xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7b3xx.h"
+  #include "stm32h7b3xx.h"
 #elif defined(STM32H7A3xxQ)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7a3xxq.h"
+  #include "stm32h7a3xxq.h"
 #elif defined(STM32H7B3xxQ)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7b3xxq.h"
+  #include "stm32h7b3xxq.h"
 #elif defined(STM32H735xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h735xx.h"
+  #include "stm32h735xx.h"
 #elif defined(STM32H733xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h733xx.h"
+  #include "stm32h733xx.h"
 #elif defined(STM32H730xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h730xx.h"
+  #include "stm32h730xx.h"
 #elif defined(STM32H730xxQ)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h730xxq.h"
+  #include "stm32h730xxq.h"
 #elif defined(STM32H725xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h725xx.h"
+  #include "stm32h725xx.h"
 #elif defined(STM32H723xx)
-  #include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h"
+  #include "stm32h723xx.h"
 #else
  #error "Please select first the target STM32H7xx device used in your application (in stm32h7xx.h file)"
 #endif
@@ -220,7 +220,7 @@ typedef enum
   */
 
 #if defined (USE_HAL_DRIVER)
- #include "NucleoH7_freeRTOS/Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
+ #include "stm32h7xx_hal.h"
 #endif /* USE_HAL_DRIVER */
 
 

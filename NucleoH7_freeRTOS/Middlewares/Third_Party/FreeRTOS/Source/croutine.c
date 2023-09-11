@@ -25,9 +25,9 @@
  * 1 tab == 4 spaces!
  */
 
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "croutine.h"
 
 /* Remove the whole file is co-routines are not being used. */
 #if( configUSE_CO_ROUTINES != 0 )

@@ -221,7 +221,7 @@ typedef enum
 #define __FPU_PRESENT             1       /*!< FPU present                                   */
 #define __ICACHE_PRESENT          1       /*!< CM7 instruction cache present                 */
 #define __DCACHE_PRESENT          1       /*!< CM7 data cache present                        */
-#include "NucleoH7_freeRTOS/Drivers/CMSIS/Include/core_cm7.h"                     /*!< Cortex-M7 processor and core peripherals      */
+#include "core_cm7.h"                     /*!< Cortex-M7 processor and core peripherals      */
 
 /**
   * @}
@@ -230,7 +230,7 @@ typedef enum
 
 
 
-#include "NucleoH7_freeRTOS/Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h"
+#include "system_stm32h7xx.h"
 #include <stdint.h>
 
 /** @addtogroup Peripheral_registers_structures

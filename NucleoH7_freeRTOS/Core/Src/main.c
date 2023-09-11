@@ -18,12 +18,12 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "NucleoH7_freeRTOS/Core/Inc/main.h"
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h"
-#include "NucleoH7_freeRTOS/Core/Inc/eth.h"
-#include "NucleoH7_freeRTOS/Core/Inc/usart.h"
-#include "NucleoH7_freeRTOS/Core/Inc/usb_otg.h"
-#include "NucleoH7_freeRTOS/Core/Inc/gpio.h"
+#include "main.h"
+#include "cmsis_os.h"
+#include "eth.h"
+#include "usart.h"
+#include "usb_otg.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

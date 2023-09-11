@@ -27,8 +27,8 @@
 
 
 #include <stdlib.h>
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
-#include "NucleoH7_freeRTOS/Middlewares/Third_Party/FreeRTOS/Source/include/list.h"
+#include "FreeRTOS.h"
+#include "list.h"
 
 /*-----------------------------------------------------------
  * PUBLIC LIST API documented in list.h
