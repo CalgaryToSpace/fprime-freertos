@@ -3,7 +3,7 @@
 #
 # This file acts as a template for the fprime platform files used by the CMake system.
 # These files specify build flags, compiler directives, and must specify an include
-# directory for system includes like "StandardTypes.hpp".
+# directory for system includes like "PlatformTypes.hpp".
 #
 # Follow all the steps in this template to create a platform file. Ensure
 # to remove the platform-failsafe (step 1) and fill in all <SOMETHING> tags.
@@ -29,7 +29,7 @@
 # F prime platform files are used to set F prime specific settings. This allows the user to control
 # some aspects of the F prime build at the top-level. This means setting global include directories
 # compiler definitions for the platform, threading libraries, etc. The bare-minimum platform file
-# should specify an include directory for "StandardTypes.hpp" and a threading library if using
+# should specify an include directory for "PlatformTypes.hpp" and a threading library if using
 # active components with OS supported threads. This can be done with the following lines:
 #
 # ```
@@ -47,7 +47,7 @@
 ## STEP 1: DELETE the following fail-safe line
 
 ## STEP 2: Specify the OS type include directive i.e. LINUX or DARWIN
-add_definitions(-DTGT_OS_TYPE_freertos)
+add_definitions(-DTGT_OS_TYPE_FREERTOS)
 
 # STEP 3: Specify CMAKE C and CXX compile flags. DO NOT clear existing flags
 
@@ -55,13 +55,13 @@ add_definitions(-DTGT_OS_TYPE_freertos)
 #         directory. NOTE: when running without threads, remove this line.
 #         Here there is a check for the using baremetal scheduler
 if (NOT DEFINED FPRIME_USE_BAREMETAL_SCHEDULER)
-   set(FPRIME_USE_BAREMETAL_SCHEDULE OFF)
+   set(FPRIME_USE_BAREMETAL_SCHEDULER OFF)
    message(STATUS "Requiring thread library")
 endif()
 set(FPRIME_USE_POSIX OFF)
 
-# STEP 5: Specify a directory containing the "StandardTypes.hpp" headers, as well
+# STEP 5: Specify a directory containing the "PlatformTypes.hpp" headers, as well
 #         as other system headers. Other global headers can be placed here.
 #         Note: Typically, the Linux directory is a good default, as it grabs
 #         standard types from <stdint.h>. 
-include_directories(SYSTEM "${FPRIME_FRAMEWORK_PATH}/Fw/Types/freeRTOS")
+include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/types/stm32/")
