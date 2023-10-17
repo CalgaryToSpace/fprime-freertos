@@ -36,17 +36,18 @@
 
 ## STEP 1: DELETE the following fail-safe line
 
+message(STATUS "===stm32.cmake===")
 ## STEP 2: Specify the target system's name. i.e. raspberry-pi-3
 set(CMAKE_SYSTEM_NAME "freertos")
 set(CMAKE_SYSTEM_PROCESSOR arm)
-set(MCU_MODEL STM32H743xx)
+set(MCU_MODEL STM32L4R5xx)
 set(CMAKE_CROSSCOMPILING 1)
 set(CMAKE_C_COMPILER_WORKS 1)
 set(CMAKE_CXX_COMPILER_WORKS 1)
 set(CMAKE_ASM_COMPILER_WORKS 1)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
-SET(STM32_BSP_PATH "${CMAKE_CURRENT_LIST_DIR}/../../NucleoH7_freeRTOS" CACHE PATH "Path to STM32 BSP")
+SET(STM32_BSP_PATH "${CMAKE_CURRENT_LIST_DIR}/../../NucleoL4_freeRTOS" CACHE PATH "Path to STM32 BSP")
 
 set(TOOLCHAIN_PREFIX arm-none-eabi-)
 # STEP 3: Specify the path to C and CXX cross compilers
@@ -57,17 +58,17 @@ set(CMAKE_LINKER ${TOOLCHAIN_PREFIX}ld)
 set(CMAKE_OBJCOPY ${TOOLCHAIN_PREFIX}objcopy)
 set(CMAKE_SIZE ${TOOLCHAIN_PREFIX}size)
 
-set(MCU_LINKER_SCRIPT ${STM32_BSP_PATH}/STM32H743ZITx_FLASH.ld)
+set(MCU_LINKER_SCRIPT ${STM32_BSP_PATH}/STM32L4R5ZITX_FLASH.ld)
 
 set(CPU_PARAMETERS
-    -mcpu=cortex-m7
+    -mcpu=cortex-m4
     -mthumb
-    -mfpu=fpv5-sp-d16
+    -mfpu=fpv4-sp-d16
     -mfloat-abi=hard)
 set(STM32_LD  "-T${MCU_LINKER_SCRIPT} \
-    -mcpu=cortex-m7 \
+    -mcpu=cortex-m4 \
     -mthumb \
-    -mfpu=fpv5-sp-d16 \
+    -mfpu=fpv4-sp-d16 \
     -mfloat-abi=hard \
     -Wl,-Map=${CMAKE_PROJECT_NAME}.map \
     --specs=nosys.specs \
@@ -81,11 +82,11 @@ set(COMPILER_COMMON_FLAGS
     "-fdata-sections -ffunction-sections \
     -DUSE_HAL_DRIVER \
     -DTGT_OS_TYPE_FREERTOS \
-    -mcpu=cortex-m7 \
+    -mcpu=cortex-m4 \
     -mthumb \
-    -mfpu=fpv5-sp-d16 \
+    -mfpu=fpv4-sp-d16 \
     -mfloat-abi=hard \
-    -DSTM32H743xx \
+    -DSTM32L4R5xx \
     --specs=nano.specs -Wl,--gc-sections"
     )    
 set(CMAKE_C_FLAGS
@@ -114,3 +115,5 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+#include("${FPRIME_FRAMEWORK_PATH}/cmake/toolchain/helpers/arm-linux-base.cmake")

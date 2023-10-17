@@ -46,6 +46,7 @@
 
 ## STEP 1: DELETE the following fail-safe line
 
+message(STATUS "===freertos.cmake===")
 ## STEP 2: Specify the OS type include directive i.e. LINUX or DARWIN
 add_definitions(-DTGT_OS_TYPE_FREERTOS)
 
