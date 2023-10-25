@@ -46,6 +46,7 @@
 
 ## STEP 1: DELETE the following fail-safe line
 
+message(STATUS "===freertos.cmake===")
 ## STEP 2: Specify the OS type include directive i.e. LINUX or DARWIN
 add_definitions(-DTGT_OS_TYPE_FREERTOS)
 
@@ -64,4 +65,19 @@ set(FPRIME_USE_POSIX OFF)
 #         as other system headers. Other global headers can be placed here.
 #         Note: Typically, the Linux directory is a good default, as it grabs
 #         standard types from <stdint.h>. 
-include_directories(SYSTEM "${CMAKE_CURRENT_LIST_DIR}/types/stm32/")
+
+# TODO This is tightly coupled to the project structure.  Loosen it up
+include_directories(SYSTEM
+   "${CMAKE_CURRENT_LIST_DIR}/types/stm32/"
+   "${FPRIME_PROJECT_ROOT}/STM32CubeL4/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/"
+   "${FPRIME_PROJECT_ROOT}/STM32CubeL4/Middlewares/Third_Party/FreeRTOS/Source/include/"
+   "${FPRIME_PROJECT_ROOT}/STM32CubeL4/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/"
+   "${FPRIME_PROJECT_ROOT}/STM32CubeL4/Drivers/CMSIS/Device/ST/STM32L4xx/Include/"
+   "${FPRIME_PROJECT_ROOT}/STM32CubeL4/Drivers/CMSIS/Include/"
+   "${FPRIME_PROJECT_ROOT}/STM32CubeL4/Drivers/STM32L4xx_HAL_Driver/Inc/"
+   "${FPRIME_PROJECT_ROOT}/Nucleo/Top/"
+)
+
+set(MOD_DEPS
+   OS
+)

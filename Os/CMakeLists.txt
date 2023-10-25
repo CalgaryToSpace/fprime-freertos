@@ -1,14 +1,14 @@
 ####
 # F prime CMakeLists.txt:
 #
-# SOURCE_FILES: combined list of source and autocoding diles
+# SOURCE_FILES: combined list of source and autocoding files
 # MOD_DEPS: (optional) module dependencies
 #
 ####
 
 # Basic module dependencies
 set(MOD_DEPS
-  "${CMAKE_THREAD_LIBS_INIT}" 
+  ${CMAKE_THREAD_LIBS_INIT}
   Fw/Cfg
   Fw/Types
   Fw/Logger
@@ -68,7 +68,8 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "freertos")
         "${FPRIME_FRAMEWORK_PATH}/Os/Baremetal/FileSystem.cpp"
       )
   list(APPEND MOD_DEPS
-        STM32Blink/NucleoH7_freeRTOS
+        ../STM32CubeL4
+        # "${FPRIME_CURRENT_MODULE}/freeRTOS/"
       )
   # set(MOD_DEPS
   #   NucleoH7_freeRTOS/Core/Inc
@@ -85,12 +86,14 @@ endif()
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
   list(APPEND SOURCE_FILES
     "${CMAKE_CURRENT_LIST_DIR}/MacOs/IPCQueueStub.cpp"
+    "${CMAKE_CURRENT_LIST_DIR}/MacOs/SystemResources.cpp"
   )
 # Linux IPC queues implementation
 elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
   list(APPEND SOURCE_FILES
     "${CMAKE_CURRENT_LIST_DIR}/Posix/IPCQueue.cpp"
     "${CMAKE_CURRENT_LIST_DIR}/Posix/LocklessQueue.cpp"
+	"${CMAKE_CURRENT_LIST_DIR}/Linux/SystemResources.cpp"
   )
   # Shared libraries need an -rt dependency for mq libs
   if (BUILD_SHARED_LIBS)
@@ -103,19 +106,24 @@ endif()
 if (FPRIME_USE_BAREMETAL_SCHEDULER)
     add_fprime_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Baremetal/TaskRunner/")
     foreach (ITER_ITEM IN LISTS SOURCE_FILES)
-        if (ITER_ITEM MATCHES "Task\.cpp$")
+        if (ITER_ITEM MATCHES "Task\\.cpp$")
             list(REMOVE_ITEM SOURCE_FILES "${ITER_ITEM}")
         endif()
     endforeach()
+    list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/File.cpp")
+    list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/FileSystem.cpp")
+    list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/IntervalTimer.cpp")
+    list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/Mutex.cpp")
+    list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/Queue.cpp")
+    list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/SystemResources.cpp")
     list(APPEND SOURCE_FILES "${CMAKE_CURRENT_LIST_DIR}/Baremetal/Task.cpp")
 endif()
 register_fprime_module()
 
 # Add stubs directory for testing builds
-if (CMAKE_BUILD_TYPE STREQUAL "TESTING")
+if (BUILD_TESTING)
     add_fprime_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Stubs/")
 endif()
-
 
 ### UTS ### Note: 3 separate UTs registered here.
 set(UT_SOURCE_FILES
@@ -125,6 +133,8 @@ set(UT_SOURCE_FILES
   "${CMAKE_CURRENT_LIST_DIR}/test/ut/OsValidateFileTest.cpp"
   "${CMAKE_CURRENT_LIST_DIR}/test/ut/OsTaskTest.cpp"
   "${CMAKE_CURRENT_LIST_DIR}/test/ut/OsFileSystemTest.cpp"
+  "${CMAKE_CURRENT_LIST_DIR}/test/ut/OsSystemResourcesTest.cpp"
+  "${CMAKE_CURRENT_LIST_DIR}/test/ut/OsMutexBasicLockableTest.cpp"
 )
 register_fprime_ut()
 

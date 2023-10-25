@@ -10,7 +10,7 @@ set(SOURCE_FILES
   "${CMAKE_CURRENT_LIST_DIR}/STM32BlinkTopologyAppAi.xml"
   "${CMAKE_CURRENT_LIST_DIR}/Topology.cpp"  
   "${CMAKE_CURRENT_LIST_DIR}/Main.cpp"  
-  "${CMAKE_CURRENT_LIST_DIR}/../NucleoH7_freeRTOS/startup_stm32h743xx.s"
+  "${CMAKE_CURRENT_LIST_DIR}/../NucleoL4_freeRTOS/startup_stm32l4r5xx.s"
 )
 # Note: supply non-explicit dependencies here
 set(MOD_DEPS
